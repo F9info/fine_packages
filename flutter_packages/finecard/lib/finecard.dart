@@ -12,6 +12,7 @@ class FineCard extends StatelessWidget {
       {Key? key,
         this.onTap,
         this.mainCardAlignmentPosition = MainAxisAlignment.center,
+        this.mainCardCrossAlignmentPosition = CrossAxisAlignment.center,
         this.width = 88.0,
         this.height,
         this.minHeight = 88.0,
@@ -34,6 +35,9 @@ class FineCard extends StatelessWidget {
 
   /// Set alignment inside the card using MainAxisAlignment
   final MainAxisAlignment? mainCardAlignmentPosition;
+
+  /// Set alignment inside the card using CrossAxisAlignment
+  final CrossAxisAlignment? mainCardCrossAlignmentPosition;
 
   /// set width for the card
   final double? width;
@@ -117,7 +121,7 @@ class FineCard extends StatelessWidget {
           if (cardTitle?.display == 'outside')
             Column(
               children: [
-                SizedBox(height: 12.0),
+                SizedBox(height: cardTitle?.iconBottomSpace != 0 ? cardTitle!.iconBottomSpace : 12.0),
                 Container(
                   constraints: BoxConstraints(
                       maxWidth: cardTitle!.outsideTitleMaxWidth!),
@@ -210,6 +214,7 @@ class FineCard extends StatelessWidget {
     }
     return Column(
       mainAxisAlignment: mainCardAlignmentPosition!,
+      crossAxisAlignment: mainCardCrossAlignmentPosition!,
       children: [
         Padding(
           padding: EdgeInsets.symmetric(
@@ -239,7 +244,17 @@ class FineCard extends StatelessWidget {
       padding: EdgeInsets.all(cardImage!.padding!),
       child: ClipRRect(
         child: getImageType(),
-        borderRadius: BorderRadius.circular(cardImage!.borderRadius!),
+        borderRadius: cardImage?.individualBorderRadius != null
+            ? BorderRadius.only(
+            topLeft: Radius.circular(
+                cardImage!.individualBorderRadius!.topLeft!),
+            topRight: Radius.circular(
+                cardImage!.individualBorderRadius!.topRight!),
+            bottomLeft: Radius.circular(
+                cardImage!.individualBorderRadius!.bottomLeft!),
+            bottomRight: Radius.circular(
+                cardImage!.individualBorderRadius!.bottomRight!))
+            : BorderRadius.circular(cardImage!.borderRadius!),
       ),
     );
   }
@@ -288,7 +303,7 @@ class FineCard extends StatelessWidget {
     if (cardTitle?.display == 'inside') {
       return Column(
         children: [
-          SizedBox(height: 4.0),
+          SizedBox(height: cardTitle?.iconBottomSpace != 0 ? cardTitle!.iconBottomSpace : 4.0),
           buildTitle(),
         ],
       );
@@ -351,6 +366,7 @@ class CardImage {
         this.width = 30.0,
         this.height = 30.0,
         this.borderRadius = 0,
+        this.individualBorderRadius,
         this.padding = 0});
 
   /// set image type if network(jpg, png, svg, etc...), asset or SVG
@@ -367,6 +383,9 @@ class CardImage {
 
   /// set image border radius
   final double? borderRadius;
+
+  /// set individual radius for all sides of the image
+  final IndividualRadius? individualBorderRadius;
 
   /// set space around the image
   final double? padding;
@@ -388,6 +407,7 @@ class CardTitle {
         this.titleMinHeight = 0,
         this.paddingHorizontal = 0,
         this.paddingVertical = 0,
+        this.iconBottomSpace = 0,
         this.titleBottomBorderRadius = 0,
         this.outsideTitleMaxWidth = 80.0});
 
@@ -429,6 +449,9 @@ class CardTitle {
 
   /// set vertical spacing around the title
   final double? paddingVertical;
+
+  /// set bottom space for icon or image
+  final double? iconBottomSpace;
 
   /// set radius for bottom left and right when background is used for the title
   final double? titleBottomBorderRadius;
