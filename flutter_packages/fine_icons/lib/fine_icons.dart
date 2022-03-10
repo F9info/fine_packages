@@ -1,4 +1,4 @@
-library finecard;
+library fine_icons;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -7,8 +7,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 enum ImageType { networkImage, assetImage, svgAssetImage }
 
 /// FineCard class
-class FineCard extends StatelessWidget {
-  const FineCard(
+class FineIcons extends StatelessWidget {
+  const FineIcons(
       {Key? key,
         this.onTap,
         this.mainCardAlignmentPosition = MainAxisAlignment.center,
