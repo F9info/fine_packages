@@ -17,6 +17,7 @@ class FineIcons extends StatelessWidget {
         this.height,
         this.minHeight = 88.0,
         this.background = Colors.white,
+        this.hoverBackground = Colors.transparent,
         this.elevation = 12.0,
         this.elevationShadowColor,
         this.borderWidth = 1,
@@ -50,6 +51,9 @@ class FineIcons extends StatelessWidget {
 
   /// set background colour for the card
   final Color? background;
+
+  /// set hover background colour for the card
+  final Color? hoverBackground;
 
   /// set elevation(shadow) for the card
   final double? elevation;
@@ -88,7 +92,7 @@ class FineIcons extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      hoverColor: Colors.transparent,
+      hoverColor: hoverBackground,
       child: Column(
         children: [
           Card(
@@ -121,7 +125,7 @@ class FineIcons extends StatelessWidget {
           if (cardTitle?.display == 'outside')
             Column(
               children: [
-                SizedBox(height: cardTitle?.iconBottomSpace != 0 ? cardTitle!.iconBottomSpace : 12.0),
+                SizedBox(height: cardTitle?.titleTopSpace != 0 ? cardTitle!.titleTopSpace : 12.0),
                 Container(
                   constraints: BoxConstraints(
                       maxWidth: cardTitle!.outsideTitleMaxWidth!),
@@ -303,7 +307,7 @@ class FineIcons extends StatelessWidget {
     if (cardTitle?.display == 'inside') {
       return Column(
         children: [
-          SizedBox(height: cardTitle?.iconBottomSpace != 0 ? cardTitle!.iconBottomSpace : 4.0),
+          SizedBox(height: cardTitle?.titleTopSpace != 0 ? cardTitle!.titleTopSpace : 4.0),
           buildTitle(),
         ],
       );
@@ -407,7 +411,7 @@ class CardTitle {
         this.titleMinHeight = 0,
         this.paddingHorizontal = 0,
         this.paddingVertical = 0,
-        this.iconBottomSpace = 0,
+        this.titleTopSpace = 0,
         this.titleBottomBorderRadius = 0,
         this.outsideTitleMaxWidth = 80.0});
 
@@ -451,7 +455,7 @@ class CardTitle {
   final double? paddingVertical;
 
   /// set bottom space for icon or image
-  final double? iconBottomSpace;
+  final double? titleTopSpace;
 
   /// set radius for bottom left and right when background is used for the title
   final double? titleBottomBorderRadius;
