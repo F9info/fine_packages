@@ -121,7 +121,7 @@ class FineIcons extends StatelessWidget {
           if (cardTitle?.display == 'outside')
             Column(
               children: [
-                SizedBox(height: cardTitle?.iconBottomSpace != 0 ? cardTitle!.iconBottomSpace : 12.0),
+                SizedBox(height: cardTitle?.titleTopSpace != 0 ? cardTitle!.titleTopSpace : 12.0),
                 Container(
                   constraints: BoxConstraints(
                       maxWidth: cardTitle!.outsideTitleMaxWidth!),
@@ -303,7 +303,7 @@ class FineIcons extends StatelessWidget {
     if (cardTitle?.display == 'inside') {
       return Column(
         children: [
-          SizedBox(height: cardTitle?.iconBottomSpace != 0 ? cardTitle!.iconBottomSpace : 4.0),
+          SizedBox(height: cardTitle?.titleTopSpace != 0 ? cardTitle!.titleTopSpace : 4.0),
           buildTitle(),
         ],
       );
@@ -407,7 +407,7 @@ class CardTitle {
         this.titleMinHeight = 0,
         this.paddingHorizontal = 0,
         this.paddingVertical = 0,
-        this.iconBottomSpace = 0,
+        this.titleTopSpace = 0,
         this.titleBottomBorderRadius = 0,
         this.outsideTitleMaxWidth = 80.0});
 
@@ -451,7 +451,7 @@ class CardTitle {
   final double? paddingVertical;
 
   /// set bottom space for icon or image
-  final double? iconBottomSpace;
+  final double? titleTopSpace;
 
   /// set radius for bottom left and right when background is used for the title
   final double? titleBottomBorderRadius;
