@@ -17,7 +17,6 @@ class FineIcons extends StatelessWidget {
         this.height,
         this.minHeight = 88.0,
         this.background = Colors.white,
-        this.hoverBackground = Colors.transparent,
         this.elevation = 12.0,
         this.elevationShadowColor,
         this.borderWidth = 1,
@@ -51,9 +50,6 @@ class FineIcons extends StatelessWidget {
 
   /// set background colour for the card
   final Color? background;
-
-  /// set hover background colour for the card
-  final Color? hoverBackground;
 
   /// set elevation(shadow) for the card
   final double? elevation;
@@ -92,7 +88,7 @@ class FineIcons extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      hoverColor: hoverBackground,
+      hoverColor: Colors.transparent,
       child: Column(
         children: [
           Card(
