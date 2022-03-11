@@ -1,0 +1,31 @@
+name: example
+description: Fine Icons.
+
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0-69.2.beta <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  fine_icons:
+    git:
+      url: https://github.com/F9info/flutter_fine
+      path: flutter_packages/fine_icons
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - images/logo.png
