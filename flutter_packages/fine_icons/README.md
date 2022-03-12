@@ -33,7 +33,7 @@ Visit our [website](www.f9it.com) to view all models of fine icons. You can copy
 
 </br>
 
-![](/images/fineicons.jpg)
+![](/flutter_packages/images/fineicons.jpg)
 
 
 ## Example
