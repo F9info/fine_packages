@@ -68,26 +68,23 @@ class HomePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           InstaCard(
-                            imgUrl:
-                                'https://vizagvolunteers.org/frontend/images/profiles/chandan.jpg',
+                            imgUrl: 'https://www.f9tech.com/images/flutter.jpg',
                             title: 'Your Story',
                           ),
                           SizedBox(width: 16),
                           InstaCard(
                               imgUrl:
-                                  'https://vizagvolunteers.org/frontend/images/profiles/varaprasad.jpg',
+                                  'https://www.f9tech.com/images/flutter.jpg',
                               title: 'Vara Prasad',
                               live: "Live"),
                           SizedBox(width: 16),
                           InstaCard(
-                            imgUrl:
-                                'https://vizagvolunteers.org/frontend/images/profiles/sudarshan.jpg',
+                            imgUrl: 'https://www.f9tech.com/images/flutter.jpg',
                             title: 'Sudharshan',
                           ),
                           SizedBox(width: 16),
                           InstaCard(
-                            imgUrl:
-                                'https://vizagvolunteers.org/frontend/images/profiles/prasana.jpg',
+                            imgUrl: 'https://www.f9tech.com/images/flutter.jpg',
                             title: 'Prasana',
                           ),
                         ],

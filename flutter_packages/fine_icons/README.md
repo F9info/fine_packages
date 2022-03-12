@@ -10,30 +10,382 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
+# Fine Icons
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## About
 
-## Features
+Fine Icons is a widget to design 200+ icons. 
+The Fine Icons packages come in different shapes such as square, circle, Rounded Corners, Outside Title and Inside title.
+You can create fine icons as an default icon or font awesome icon. You can add images (assets, network or SVG) inside the fine icon or make an image the fine icon. Title can be added outside or inside the fine icon.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## Components of Fine Icons
 
-## Getting started
+<br>
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+| Main Card | Inside Card  | Icon | Title | Image | Custom Widget |
+| ------------- |------------- | ------------- | ------------| ------------ | ------------ |
+| onTap mainCardAlignmentPosition mainCardCrossAlignmentPosition width </br > height </br > minHeight </br > background </br > elevation </br > elevationShadowColor </br > borderWidth </br > borderColor </br > allSideRadius individualSideRadius | width <br> height <br> background <br> elevation elevationShadowColor borderWidth borderColor allSideRadius individualSideRadius paddingHorizontal paddingVertical  | icon <br> color <br> size <br> paddingHorizontal paddingVertical | display <br> name <br> fontsize <br> color <br> fontFamily <br> fontWeight <br> height <br> fontStyle <br> letterSpacing background titleMinHeight paddingHorizontal paddingVertical titleBottomBorderRadius outsideTitleMaxWidth | imageType <br> image <br> width <br> height <br> borderRadius individualBorderRadius <br> padding | customWidgetInside customWidgetOutside
 
-## Usage
+## Demo
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+
+Visit our [website](www.f9it.com) to view all models of fine icons. You can copy the code of the fine icon you like by clicking on it and paste the code in your project and import fine icons package to your project.
+
+</br>
+
+![](/images/fineicons.jpg)
+
+
+## Example
 
 ```dart
-const like = 'sample';
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
+import 'package:fine_icons/fine_icons.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Fine Icons',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+            leading: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(
+                'images/logo.png',
+              ),
+            ),
+            leadingWidth: 80,
+            toolbarHeight: 80,
+            title: Text("Fine Icons")),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Instagram",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff0d3f9a),
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          InstaCard(
+                            imgUrl: 'https://www.f9tech.com/images/flutter.jpg',
+                            title: 'Your Story',
+                          ),
+                          SizedBox(width: 16),
+                          InstaCard(
+                              imgUrl:
+                                  'https://www.f9tech.com/images/flutter.jpg',
+                              title: 'Vara Prasad',
+                              live: "Live"),
+                          SizedBox(width: 16),
+                          InstaCard(
+                            imgUrl: 'https://www.f9tech.com/images/flutter.jpg',
+                            title: 'Sudharshan',
+                          ),
+                          SizedBox(width: 16),
+                          InstaCard(
+                            imgUrl: 'https://www.f9tech.com/images/flutter.jpg',
+                            title: 'Prasana',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Add Itenerary",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff0d3f9a),
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          FineIcons(
+                            allSideRadius: 15,
+                            cardIcon: CardIcon(
+                              icon: Icons.add_ic_call,
+                              color: Colors.black,
+                              size: 30,
+                            ),
+                            cardTitle: CardTitle(
+                              display: 'outside',
+                              name: "Add Call",
+                              fontSize: 14,
+                            ),
+                          ),
+                          SizedBox(width: 16),
+                          FineIcons(
+                            background: Colors.red,
+                            allSideRadius: 15,
+                            cardIcon: CardIcon(
+                              icon: Icons.favorite,
+                              color: Colors.white,
+                              size: 30,
+                            ),
+                            cardTitle: CardTitle(
+                                display: 'outside',
+                                name: "Add Favorite",
+                                fontSize: 14,
+                                color: Colors.red),
+                          ),
+                          SizedBox(width: 16),
+                          FineIcons(
+                            allSideRadius: 15,
+                            cardIcon: CardIcon(
+                              icon: Icons.add_a_photo,
+                              color: Colors.black,
+                              size: 30,
+                            ),
+                            cardTitle: CardTitle(
+                              display: 'outside',
+                              name: "Add A Photo",
+                              fontSize: 14,
+                            ),
+                          ),
+                          SizedBox(width: 16),
+                          FineIcons(
+                            allSideRadius: 15,
+                            cardIcon: CardIcon(
+                              icon: Icons.add_location_alt_rounded,
+                              color: Colors.black,
+                              size: 40,
+                            ),
+                            cardTitle: CardTitle(
+                              display: 'outside',
+                              name: "Add Location",
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Donations",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff0d3f9a),
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          FineIcons(
+                            elevation: 0,
+                            width: 100,
+                            minHeight: 100,
+                            allSideRadius: 15,
+                            background: Colors.deepPurple,
+                            insideCard: InsideCard(
+                              elevation: 2,
+                              width: 40,
+                              height: 40,
+                              individualSideRadius: IndividualRadius(
+                                  topRight: 15, bottomLeft: 15),
+                            ),
+                            cardIcon: CardIcon(
+                                icon: Icons.attach_money_rounded,
+                                color: Colors.black,
+                                size: 30),
+                            cardTitle: CardTitle(
+                              display: 'inside',
+                              name: "Money",
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                          SizedBox(width: 8),
+                          FineIcons(
+                            elevation: 0,
+                            width: 100,
+                            minHeight: 100,
+                            allSideRadius: 15,
+                            background: Colors.deepOrange,
+                            insideCard: InsideCard(
+                              elevation: 2,
+                              width: 40,
+                              height: 40,
+                              individualSideRadius: IndividualRadius(
+                                  topRight: 15, bottomLeft: 15),
+                            ),
+                            cardIcon: CardIcon(
+                                icon: Icons.attachment_outlined,
+                                color: Colors.black,
+                                size: 30),
+                            cardTitle: CardTitle(
+                              display: 'inside',
+                              name: "Material",
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                          SizedBox(width: 8),
+                          FineIcons(
+                            elevation: 0,
+                            width: 100,
+                            minHeight: 100,
+                            allSideRadius: 15,
+                            background: Colors.blue,
+                            insideCard: InsideCard(
+                              elevation: 2,
+                              width: 40,
+                              height: 40,
+                              individualSideRadius: IndividualRadius(
+                                  topRight: 15, bottomLeft: 15),
+                            ),
+                            cardIcon: CardIcon(
+                                icon: Icons.supervisor_account,
+                                color: Colors.black,
+                                size: 30),
+                            cardTitle: CardTitle(
+                              display: 'inside',
+                              name: "Man Hours",
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 100),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class InstaCard extends StatelessWidget {
+  const InstaCard({
+    Key? key,
+    required this.imgUrl,
+    required this.title,
+    this.live,
+  }) : super(key: key);
+
+  final String imgUrl;
+  final String title;
+  final String? live;
+
+  @override
+  Widget build(BuildContext context) {
+    if (live != null) {
+      return Stack(
+        children: [
+          fineCardIcons(),
+          Positioned(
+            left: 20,
+            top: 70,
+            child: FineIcons(
+              width: 50,
+              minHeight: 20,
+              elevation: 0,
+              allSideRadius: 15,
+              background: Colors.red,
+              cardTitle: CardTitle(
+                  display: 'inside',
+                  name: live,
+                  fontSize: 10,
+                  color: Colors.white),
+            ),
+          ),
+        ],
+      );
+    } else {
+      return fineCardIcons();
+    }
+  }
+
+  FineIcons fineCardIcons() {
+    return FineIcons(
+      elevation: 12,
+      background: Colors.white,
+      cardImage: CardImage(
+          imageType: ImageType.networkImage,
+          image: imgUrl,
+          borderRadius: 100,
+          width: 78,
+          height: 78),
+      borderWidth: 1,
+      borderColor: Color(0xffde0943),
+      allSideRadius: 100,
+      cardTitle:
+          CardTitle(display: 'outside', name: title, outsideTitleMaxWidth: 100),
+    );
+  }
+}
+
+
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
