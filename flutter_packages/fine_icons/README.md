@@ -12,6 +12,8 @@ and the Flutter guide for
 -->
 # Fine Icons
 
+### Single widget to create 200+ icons
+
 ## About
 
 Fine Icons is a widget to design 200+ icons. 
@@ -29,7 +31,7 @@ You can create fine icons as an default icon or font awesome icon. You can add i
 ## Demo
 
 
-Visit our [website](https://www.f9it.com/) to view all models of fine icons. You can copy the code of the fine icon you like by clicking on it and paste the code in your project and import fine icons package to your project.
+Visit our [website](https://f9it.com/#/packages) to view all models of fine icons. You can copy the code of the fine icon you like by clicking on it and paste the code in your project and import fine icons package to your project.
 
 ![](/flutter_packages/images/fineicons.jpg)
 

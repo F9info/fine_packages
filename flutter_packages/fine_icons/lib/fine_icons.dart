@@ -10,24 +10,24 @@ enum ImageType { networkImage, assetImage, svgAssetImage }
 class FineIcons extends StatelessWidget {
   const FineIcons(
       {Key? key,
-        this.onTap,
-        this.mainCardAlignmentPosition = MainAxisAlignment.center,
-        this.mainCardCrossAlignmentPosition = CrossAxisAlignment.center,
-        this.width = 88.0,
-        this.height,
-        this.minHeight = 88.0,
-        this.background = Colors.white,
-        this.elevation = 12.0,
-        this.elevationShadowColor,
-        this.borderWidth = 1,
-        this.borderColor = Colors.transparent,
-        this.allSideRadius = 0,
-        this.individualSideRadius,
-        this.cardIcon,
-        this.cardImage,
-        this.cardTitle,
-        this.insideCard,
-        this.cardCustomWidget})
+      this.onTap,
+      this.mainCardAlignmentPosition = MainAxisAlignment.center,
+      this.mainCardCrossAlignmentPosition = CrossAxisAlignment.center,
+      this.width = 88.0,
+      this.height,
+      this.minHeight = 88.0,
+      this.background = Colors.white,
+      this.elevation = 12.0,
+      this.elevationShadowColor,
+      this.borderWidth = 1,
+      this.borderColor = Colors.transparent,
+      this.allSideRadius = 0,
+      this.individualSideRadius,
+      this.cardIcon,
+      this.cardImage,
+      this.cardTitle,
+      this.insideCard,
+      this.cardCustomWidget})
       : super(key: key);
 
   /// Use on tap to navigate to any page or URL
@@ -98,13 +98,13 @@ class FineIcons extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: individualSideRadius != null
                   ? BorderRadius.only(
-                  topLeft: Radius.circular(individualSideRadius!.topLeft!),
-                  topRight:
-                  Radius.circular(individualSideRadius!.topRight!),
-                  bottomLeft:
-                  Radius.circular(individualSideRadius!.bottomLeft!),
-                  bottomRight:
-                  Radius.circular(individualSideRadius!.bottomRight!))
+                      topLeft: Radius.circular(individualSideRadius!.topLeft!),
+                      topRight:
+                          Radius.circular(individualSideRadius!.topRight!),
+                      bottomLeft:
+                          Radius.circular(individualSideRadius!.bottomLeft!),
+                      bottomRight:
+                          Radius.circular(individualSideRadius!.bottomRight!))
                   : BorderRadius.circular(allSideRadius!),
               side: BorderSide(width: borderWidth!, color: borderColor!),
             ),
@@ -121,7 +121,10 @@ class FineIcons extends StatelessWidget {
           if (cardTitle?.display == 'outside')
             Column(
               children: [
-                SizedBox(height: cardTitle?.titleTopSpace != 0 ? cardTitle!.titleTopSpace : 12.0),
+                SizedBox(
+                    height: cardTitle?.titleTopSpace != 0
+                        ? cardTitle!.titleTopSpace
+                        : 12.0),
                 Container(
                   constraints: BoxConstraints(
                       maxWidth: cardTitle!.outsideTitleMaxWidth!),
@@ -186,14 +189,14 @@ class FineIcons extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: insideCard?.individualSideRadius != null
                     ? BorderRadius.only(
-                    topLeft: Radius.circular(
-                        insideCard!.individualSideRadius!.topLeft!),
-                    topRight: Radius.circular(
-                        insideCard!.individualSideRadius!.topRight!),
-                    bottomLeft: Radius.circular(
-                        insideCard!.individualSideRadius!.bottomLeft!),
-                    bottomRight: Radius.circular(
-                        insideCard!.individualSideRadius!.bottomRight!))
+                        topLeft: Radius.circular(
+                            insideCard!.individualSideRadius!.topLeft!),
+                        topRight: Radius.circular(
+                            insideCard!.individualSideRadius!.topRight!),
+                        bottomLeft: Radius.circular(
+                            insideCard!.individualSideRadius!.bottomLeft!),
+                        bottomRight: Radius.circular(
+                            insideCard!.individualSideRadius!.bottomRight!))
                     : BorderRadius.circular(insideCard!.allSideRadius!),
                 side: BorderSide(
                     width: insideCard!.borderWidth!,
@@ -246,14 +249,14 @@ class FineIcons extends StatelessWidget {
         child: getImageType(),
         borderRadius: cardImage?.individualBorderRadius != null
             ? BorderRadius.only(
-            topLeft: Radius.circular(
-                cardImage!.individualBorderRadius!.topLeft!),
-            topRight: Radius.circular(
-                cardImage!.individualBorderRadius!.topRight!),
-            bottomLeft: Radius.circular(
-                cardImage!.individualBorderRadius!.bottomLeft!),
-            bottomRight: Radius.circular(
-                cardImage!.individualBorderRadius!.bottomRight!))
+                topLeft: Radius.circular(
+                    cardImage!.individualBorderRadius!.topLeft!),
+                topRight: Radius.circular(
+                    cardImage!.individualBorderRadius!.topRight!),
+                bottomLeft: Radius.circular(
+                    cardImage!.individualBorderRadius!.bottomLeft!),
+                bottomRight: Radius.circular(
+                    cardImage!.individualBorderRadius!.bottomRight!))
             : BorderRadius.circular(cardImage!.borderRadius!),
       ),
     );
@@ -303,7 +306,10 @@ class FineIcons extends StatelessWidget {
     if (cardTitle?.display == 'inside') {
       return Column(
         children: [
-          SizedBox(height: cardTitle?.titleTopSpace != 0 ? cardTitle!.titleTopSpace : 4.0),
+          SizedBox(
+              height: cardTitle?.titleTopSpace != 0
+                  ? cardTitle!.titleTopSpace
+                  : 4.0),
           buildTitle(),
         ],
       );
@@ -316,9 +322,9 @@ class FineIcons extends StatelessWidget {
 class IndividualRadius {
   const IndividualRadius(
       {this.topLeft = 0,
-        this.topRight = 0,
-        this.bottomLeft = 0,
-        this.bottomRight = 0});
+      this.topRight = 0,
+      this.bottomLeft = 0,
+      this.bottomRight = 0});
 
   /// set topleft radius for the card
   final double? topLeft;
@@ -337,10 +343,10 @@ class IndividualRadius {
 class CardIcon {
   const CardIcon(
       {this.icon,
-        this.color = Colors.black,
-        this.size = 30.0,
-        this.paddingHorizontal = 0,
-        this.paddingVertical = 0});
+      this.color = Colors.black,
+      this.size = 30.0,
+      this.paddingHorizontal = 0,
+      this.paddingVertical = 0});
 
   /// for a number of predefined icons available for material design applications. For customisation use font awesome icons.
   final IconData? icon;
@@ -362,12 +368,12 @@ class CardIcon {
 class CardImage {
   const CardImage(
       {this.imageType = ImageType.networkImage,
-        this.image,
-        this.width = 30.0,
-        this.height = 30.0,
-        this.borderRadius = 0,
-        this.individualBorderRadius,
-        this.padding = 0});
+      this.image,
+      this.width = 30.0,
+      this.height = 30.0,
+      this.borderRadius = 0,
+      this.individualBorderRadius,
+      this.padding = 0});
 
   /// set image type if network(jpg, png, svg, etc...), asset or SVG
   final ImageType imageType;
@@ -395,21 +401,21 @@ class CardImage {
 class CardTitle {
   const CardTitle(
       {this.display,
-        this.name,
-        this.fontSize = 16.0,
-        this.color = Colors.black,
-        this.fontFamily,
-        this.fontWeight = FontWeight.w700,
-        this.height,
-        this.fontStyle,
-        this.letterSpacing,
-        this.background,
-        this.titleMinHeight = 0,
-        this.paddingHorizontal = 0,
-        this.paddingVertical = 0,
-        this.titleTopSpace = 0,
-        this.titleBottomBorderRadius = 0,
-        this.outsideTitleMaxWidth = 80.0});
+      this.name,
+      this.fontSize = 16.0,
+      this.color = Colors.black,
+      this.fontFamily,
+      this.fontWeight = FontWeight.w700,
+      this.height,
+      this.fontStyle,
+      this.letterSpacing,
+      this.background,
+      this.titleMinHeight = 0,
+      this.paddingHorizontal = 0,
+      this.paddingVertical = 0,
+      this.titleTopSpace = 0,
+      this.titleBottomBorderRadius = 0,
+      this.outsideTitleMaxWidth = 80.0});
 
   /// set inside or outside display of title. Eg: display: 'inside' for inside display | display: 'outside' for outside display
   final String? display;
@@ -464,16 +470,16 @@ class CardTitle {
 class InsideCard {
   const InsideCard(
       {this.width = 50.0,
-        this.height = 50.0,
-        this.background = Colors.white,
-        this.elevation = 12.0,
-        this.elevationShadowColor,
-        this.borderWidth = 0,
-        this.borderColor = Colors.transparent,
-        this.allSideRadius = 0,
-        this.individualSideRadius,
-        this.paddingHorizontal = 0,
-        this.paddingVertical = 0});
+      this.height = 50.0,
+      this.background = Colors.white,
+      this.elevation = 12.0,
+      this.elevationShadowColor,
+      this.borderWidth = 0,
+      this.borderColor = Colors.transparent,
+      this.allSideRadius = 0,
+      this.individualSideRadius,
+      this.paddingHorizontal = 0,
+      this.paddingVertical = 0});
 
   /// set width for inside card
   final double? width;
