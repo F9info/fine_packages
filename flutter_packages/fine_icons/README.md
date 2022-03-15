@@ -20,6 +20,8 @@ Fine Icons is a widget to design 200+ icons.
 The Fine Icons packages come in different shapes such as square, circle, Rounded Corners, Outside Title and Inside title.
 You can create fine icons as an default icon or font awesome icon. You can add images (assets, network or SVG) inside the fine icon or make an image the fine icon. Title can be added outside or inside the fine icon.
 
+![fineicons](https://user-images.githubusercontent.com/74196534/158010097-68ad6f10-d970-48c0-a0a4-0521723a2d9c.jpg)
+
 ## Components of Fine Icons
 
 <br>
@@ -33,8 +35,8 @@ You can create fine icons as an default icon or font awesome icon. You can add i
 
 Visit our [website](https://f9it.com/#/packages) to view all models of fine icons. You can copy the code of the fine icon you like by clicking on it and paste the code in your project and import fine icons package to your project.
 
-![fineicons](https://user-images.githubusercontent.com/74196534/158010097-68ad6f10-d970-48c0-a0a4-0521723a2d9c.jpg)
 
+![fine_icons](https://user-images.githubusercontent.com/74196534/158326232-7b8f2972-61b0-4325-b15d-6697d0a55859.gif)
 
 
 ## How to use
@@ -43,7 +45,7 @@ Visit our [website](https://f9it.com/#/packages) to view all models of fine icon
       import 'package:fine_icons/fine_icons.dart';
   ```
 
-create a fine icon widget
+Create a fine icon widget using the below code:
 
   ```dart
       FineIcons(
