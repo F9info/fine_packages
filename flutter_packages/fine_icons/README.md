@@ -31,8 +31,6 @@ You can create fine icons as an default icon or font awesome icon. You can add i
 
 Visit our [website](https://www.f9it.com/) to view all models of fine icons. You can copy the code of the fine icon you like by clicking on it and paste the code in your project and import fine icons package to your project.
 
-![](/flutter_packages/images/fineicons.jpg)
-
 ![fineicons](https://user-images.githubusercontent.com/74196534/158010097-68ad6f10-d970-48c0-a0a4-0521723a2d9c.jpg)
 
 
