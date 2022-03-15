@@ -6,6 +6,12 @@
       <excludeFolder url="file://$MODULE_DIR$/flutter_packages/finecard/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/flutter_packages/finecard/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/flutter_packages/finecard/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_packages/fine_icons/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_packages/fine_icons/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_packages/fine_icons/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_packages/fine_icons/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_packages/fine_icons/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_packages/fine_icons/.dart_tool" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
